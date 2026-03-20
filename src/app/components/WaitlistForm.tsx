@@ -1,12 +1,18 @@
 "use client";
 
-import { useState, useTransition, type FormEvent } from "react";
+import { useState, useEffect, useTransition, type FormEvent } from "react";
 import { joinWaitlist } from "../actions";
 
 export default function WaitlistForm({ id }: { id: string }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [isPending, startTransition] = useTransition();
+  const [referralSource, setReferralSource] = useState("");
+
+  useEffect(() => {
+    const ref = new URLSearchParams(window.location.search).get("ref") ?? "";
+    setReferralSource(ref);
+  }, []);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -57,7 +63,7 @@ export default function WaitlistForm({ id }: { id: string }) {
           disabled={isPending}
           style={{ maxWidth: 180 }}
         />
-        <input type="hidden" name="referral_source" value={typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("ref") ?? "" : ""} />
+        <input type="hidden" name="referral_source" value={referralSource} />
         <button type="submit" disabled={isPending}>
           {isPending ? "Joining..." : "Join the fight"}
         </button>
