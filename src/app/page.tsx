@@ -31,15 +31,19 @@ export default function Home() {
 
       {/* ═══ HERO ═══ */}
       <div className="hero">
-        <div className="hero-provocation">Your bank is robbing you</div>
+        <div className="hero-provocation">The banking mafia is criminal</div>
         <h1>
-          See what your lenders are <em>really</em> charging&nbsp;you
+          They want you to
+          <br />
+          stay in debt.
+          <br />
+          <em>We fight back.</em>
         </h1>
         <p className="hero-sub">
-          Your credit card&apos;s APR was legal in{" "}
-          <strong>zero countries</strong> before 1978. Usury shows you exactly
-          what it&apos;s costing you — and how to <strong>fight back.</strong>
+          <strong>What if you don&apos;t actually owe what they say you owe?</strong>{" "}
+          Find out and fight back.
         </p>
+        <p className="hero-form-label">We&apos;ll text you when it&apos;s ready.</p>
         <div className="hero-form-wrapper">
           <WaitlistForm id="hero-form" />
         </div>
@@ -56,12 +60,15 @@ export default function Home() {
       {/* ═══ BOLD STATEMENT ═══ */}
       <RevealOnScroll className="bold-statement">
         <h2>
-          For most of human history, charging excessive interest was a{" "}
-          <em>crime.</em> In 2026 America, it&apos;s called a credit card.
+          For 4,000 years, charging excessive interest was a
+          crime. They called it <em>usury.</em> In 2026 America, they
+          call it a credit card.
         </h2>
         <p className="subtext">
-          Every major moral tradition condemned it. Every major civilization
-          banned it. Then in 1978, one Supreme Court decision changed everything.
+          Christianity banned it. Islam banned it. Judaism restricted it.
+          Ancient Rome, Greece, and Babylon outlawed it. Then in 1978,{" "}
+          <em>Marquette v. First Omaha</em> let banks charge whatever
+          they want — and your 24.99% APR became legal overnight.
         </p>
       </RevealOnScroll>
 
@@ -82,7 +89,7 @@ export default function Home() {
           </RevealOnScroll>
           <RevealOnScroll className="stat">
             <h3>0</h3>
-            <p>Apps that help before you&apos;re behind</p>
+            <p>Apps that help</p>
           </RevealOnScroll>
         </div>
       </div>
@@ -91,14 +98,11 @@ export default function Home() {
       <section id="how">
         <div className="section-kicker">How it works</div>
         <h2 className="section-heading">
-          Three steps to see what they <em>don&apos;t</em> want you to see
+          This is how you <em>fight back</em>
         </h2>
         <p className="section-body">
-          Most debt apps wait until you&apos;re drowning. Usury works while
-          you&apos;re still swimming — catching the leaks before they sink you.{" "}
-          <strong>
-            No 90-day waiting period. No minimum debt. No judgment.
-          </strong>
+          Your creditors are hoping you never challenge them.{" "}
+          <strong>That&apos;s about to change.</strong>
         </p>
 
         <div className="steps">
@@ -136,12 +140,12 @@ export default function Home() {
         <div className="expose-inner">
           <div className="section-kicker">What they&apos;re hiding</div>
           <h2 className="section-heading">
-            They&apos;re counting on you <em>not looking</em>
+            The game is rigged. <em>Here&apos;s the playbook.</em>
           </h2>
           <p className="section-body">
-            The average American pays $1,380/year in credit card interest alone.
-            Your lender&apos;s entire business model depends on you{" "}
-            <strong>never doing this math.</strong> Usury does it for you.
+            Every one of these was designed to extract money from you
+            without you noticing. They didn&apos;t teach you this in
+            school. <strong>That&apos;s the point.</strong>
           </p>
 
           <div className="expose-grid">
@@ -215,7 +219,7 @@ export default function Home() {
       <div className="power-section">
         <div className="section-kicker">The imbalance</div>
         <h2 className="section-heading">
-          The banks have lobbyists. <em>Now you have Usury.</em>
+          They want you to stay in debt. <em>We fight back.</em>
         </h2>
         <p className="section-body">
           The financial system was designed by the people who profit from it.
@@ -286,7 +290,7 @@ export default function Home() {
         <div className="history-inner">
           <div className="section-kicker">A history of usury</div>
           <h2 className="section-heading">
-            Banned for 4,000 years. <em>Legal since 1978.</em>
+            Usury: banned for 4,000 years. <em>Legal since 1978.</em>
           </h2>
           <p className="section-body">
             What your credit card company does to you has a name. Every major
@@ -423,9 +427,9 @@ export default function Home() {
       <div className="manifesto">
         <RevealOnScroll>
           <blockquote>
-            The banks have lobbyists. The credit card companies have lawyers. The
-            system has 4,000 years of momentum.{" "}
-            <em>Now you have Usury.</em>
+            They want you to stay in debt. They built the system to keep
+            you there.{" "}
+            <em>We fight back.</em>
           </blockquote>
         </RevealOnScroll>
         <RevealOnScroll>
@@ -489,9 +493,29 @@ export default function Home() {
             <span>Launching 2026</span>
           </div>
           <p className="closing-line">
-            The banks have lobbyists. <em>Now you have Usury.</em>
+            They want you to stay in debt. <em>We fight back.</em>
           </p>
         </div>
+      </div>
+
+      {/* ═══ DISCLAIMERS ═══ */}
+      <div className="disclaimers">
+        <p id="disclaimer-1">
+          *Results vary. Debt reduction through settlement depends on creditor
+          willingness to negotiate and individual account circumstances. Typical
+          settlements range from 20–50% of the original balance. Not all debts
+          qualify for settlement. Usury does not guarantee any specific reduction
+          amount.
+        </p>
+        <p id="disclaimer-2">
+          **Debt elimination refers to debts that may be invalidated through the
+          debt validation process under the Fair Debt Collection Practices Act
+          (FDCPA). If a collector cannot provide adequate verification of a debt,
+          consumers may not be legally obligated to pay it. Usury provides tools
+          and guidance for submitting debt validation requests. Results depend on
+          individual circumstances and creditor responses. This is not legal
+          advice.
+        </p>
       </div>
 
       {/* ═══ FOOTER ═══ */}

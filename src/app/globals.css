@@ -134,8 +134,8 @@ nav {
 
 .hero h1 {
   font-family: var(--font-serif);
-  font-size: clamp(46px, 7.5vw, 96px);
-  line-height: 1.02;
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 1.1;
   color: var(--off-white);
   max-width: 1000px;
   opacity: 0;
@@ -156,44 +156,53 @@ nav {
 
 .hero-sub strong { color: var(--off-white); font-weight: 600; }
 
+.hero-form-label {
+  font-size: 14px;
+  color: var(--mid-gray);
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.75s;
+}
+
 .hero-form-wrapper {
-  margin-top: 48px;
+  margin-top: 16px;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.8s;
 }
 
 .hero-form {
-  display: flex;
-  gap: 12px;
   max-width: 540px;
 }
 
-.hero-form input {
+.form-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  padding: 6px 6px 6px 24px;
+}
+
+.form-pill input {
   flex: 1;
   min-width: 0;
-  padding: 18px 22px;
-  background: var(--dark-gray);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
   color: var(--off-white);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 16px;
   outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.hero-form input::placeholder { color: #555; }
-.hero-form input:focus {
-  border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(192,57,43,0.15);
-}
+.form-pill input::placeholder { color: #666; }
 
-.hero-form button {
-  padding: 18px 36px;
-  background: var(--red);
-  color: var(--white);
+.form-pill button {
+  padding: 16px 32px;
+  background: var(--off-white);
+  color: var(--black);
   border: none;
-  border-radius: 6px;
+  border-radius: 999px;
   font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 600;
@@ -202,10 +211,10 @@ nav {
   white-space: nowrap;
 }
 
-.hero-form button:hover {
-  background: var(--red-light);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(192,57,43,0.3);
+.form-pill button:hover {
+  background: var(--white);
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(255,255,255,0.1);
 }
 
 .hero-meta {
@@ -854,6 +863,32 @@ section {
 
 .final-cta .closing-line em { color: var(--red); }
 
+/* ── DISCLAIMER LINKS ── */
+.disclaimer-link {
+  color: var(--mid-gray);
+  text-decoration: none;
+  font-size: 0.75em;
+  vertical-align: super;
+  transition: color 0.3s;
+}
+
+.disclaimer-link:hover { color: var(--red); }
+
+/* ── DISCLAIMERS ── */
+.disclaimers {
+  padding: 40px 40px 0;
+  max-width: 800px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.disclaimers p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 16px;
+}
+
 /* ── FOOTER ── */
 footer {
   padding: 48px 40px;
@@ -902,6 +937,23 @@ footer {
 
 .footer-links a:hover { color: var(--red); }
 
+/* ── TCPA CONSENT ── */
+.tcpa-consent {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #444;
+  margin-top: 12px;
+  max-width: 540px;
+}
+
+.tcpa-consent a {
+  color: #555;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.tcpa-consent a:hover { color: var(--off-white); }
+
 /* ── FORM SUCCESS ── */
 .form-success {
   display: none;
@@ -942,10 +994,12 @@ footer {
   .nav-links { gap: 16px; }
   .nav-link { display: none; }
   .hero { padding: 130px 24px 70px; }
-  .hero-form { flex-direction: column; }
-  .hero-form button { width: 100%; }
+  .hero-provocation { letter-spacing: 3px; }
+  .hero-provocation::before { width: 20px; }
+  .form-pill { padding: 4px 4px 4px 18px; }
+  .form-pill button { padding: 14px 24px; font-size: 14px; }
   .hero-sub { font-size: 16px; }
-  .hero-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hero-meta { flex-wrap: wrap; gap: 12px; }
   .stat-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   section, .power-section, .for-section { padding: 80px 24px; }
   .steps { grid-template-columns: 1fr; gap: 20px; }
@@ -956,8 +1010,6 @@ footer {
   .proof-grid { grid-template-columns: 1fr; }
   .bold-statement, .manifesto { padding: 80px 24px; }
   .final-cta { padding: 100px 24px; }
-  .final-cta .hero-form { flex-direction: column; }
-  .final-cta .hero-form button { width: 100%; }
   .final-cta .hero-meta { align-items: center; }
   .bold-statement::before { font-size: 150px; }
   .manifesto::before { width: 300px; height: 300px; }

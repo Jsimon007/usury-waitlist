@@ -34,8 +34,8 @@ export default function WaitlistForm({ id }: { id: string }) {
   if (submitted) {
     return (
       <div className="form-success show" id={`${id}-success`}>
-        <strong>You&apos;re in.</strong> We&apos;ll notify you when Usury
-        launches. Check your email — and check your credit card&apos;s APR. The
+        <strong>You&apos;re in.</strong> We&apos;ll text you when Usury
+        launches. In the meantime — check your credit card&apos;s APR. The
         number might surprise you.
       </div>
     );
@@ -44,30 +44,26 @@ export default function WaitlistForm({ id }: { id: string }) {
   return (
     <div>
       <form className="hero-form" id={id} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your name"
-          disabled={isPending}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-          disabled={isPending}
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone (optional)"
-          disabled={isPending}
-        />
+        <div className="form-pill">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your mobile number"
+            required
+            disabled={isPending}
+          />
+          <button type="submit" disabled={isPending}>
+            {isPending ? "Joining..." : "Fight back"}
+          </button>
+        </div>
         <input type="hidden" name="referral_source" value={referralSource} />
-        <button type="submit" disabled={isPending}>
-          {isPending ? "Joining..." : "Join the fight"}
-        </button>
       </form>
+      <p className="tcpa-consent">
+        By entering your phone number, you agree to receive text messages from
+        Usury about product updates and launch notifications. Message &amp; data
+        rates may apply. Message frequency varies. Reply STOP to unsubscribe.{" "}
+        <a href="#">Privacy Policy</a> &amp; <a href="#">Terms</a>.
+      </p>
       {error && (
         <p
           style={{
