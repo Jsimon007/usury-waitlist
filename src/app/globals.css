@@ -26,7 +26,6 @@ body {
   color: var(--off-white);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 ::selection { background: var(--red); color: var(--white); }
@@ -171,6 +170,7 @@ nav {
 
 .hero-form input {
   flex: 1;
+  min-width: 0;
   padding: 18px 22px;
   background: var(--dark-gray);
   border: 1px solid rgba(255,255,255,0.08);
@@ -785,6 +785,7 @@ section {
   padding: 160px 40px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .final-cta::before {
@@ -943,7 +944,8 @@ footer {
   .hero { padding: 130px 24px 70px; }
   .hero-form { flex-direction: column; }
   .hero-form button { width: 100%; }
-  .hero-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-sub { font-size: 16px; }
+  .hero-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
   .stat-bar-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   section, .power-section, .for-section { padding: 80px 24px; }
   .steps { grid-template-columns: 1fr; gap: 20px; }
@@ -957,5 +959,15 @@ footer {
   .final-cta .hero-form { flex-direction: column; }
   .final-cta .hero-form button { width: 100%; }
   .final-cta .hero-meta { align-items: center; }
+  .bold-statement::before { font-size: 150px; }
+  .manifesto::before { width: 300px; height: 300px; }
+  .final-cta::before { width: 100%; max-width: 500px; height: 250px; }
+  .ticker-item { padding: 0 20px; }
+  .expose-card { padding: 28px; }
+  .power-them, .power-you { padding: 28px; }
   .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .stat-bar-inner { grid-template-columns: 1fr; }
 }

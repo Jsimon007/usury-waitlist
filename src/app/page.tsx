@@ -1,10 +1,13 @@
 import Ticker from "./components/Ticker";
 import WaitlistForm from "./components/WaitlistForm";
+import WaitlistProvider from "./components/WaitlistProvider";
 import RevealOnScroll from "./components/RevealOnScroll";
+import ScrollReveal from "./components/ScrollReveal";
 
 export default function Home() {
   return (
-    <>
+    <WaitlistProvider>
+      <ScrollReveal />
       {/* ═══ NAV ═══ */}
       <nav>
         <a href="#" className="logo">
@@ -510,6 +513,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </>
+    </WaitlistProvider>
   );
 }

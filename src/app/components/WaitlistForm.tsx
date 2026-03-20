@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useTransition, type FormEvent } from "react";
 import { joinWaitlist } from "../actions";
+import { useWaitlist } from "./WaitlistProvider";
 
 export default function WaitlistForm({ id }: { id: string }) {
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, setSubmitted } = useWaitlist();
   const [error, setError] = useState("");
   const [isPending, startTransition] = useTransition();
   const [referralSource, setReferralSource] = useState("");
@@ -61,7 +62,6 @@ export default function WaitlistForm({ id }: { id: string }) {
           name="phone"
           placeholder="Phone (optional)"
           disabled={isPending}
-          style={{ maxWidth: 180 }}
         />
         <input type="hidden" name="referral_source" value={referralSource} />
         <button type="submit" disabled={isPending}>
