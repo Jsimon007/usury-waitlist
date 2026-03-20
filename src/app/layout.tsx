@@ -29,12 +29,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://usury.com"),
+  metadataBase: new URL("https://usury.app"),
   title: "Usury — They want you to stay in debt. We fight back.",
   description:
     "What if you don't actually owe what they say you owe? Find out and fight back.",
   icons: {
     icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "They want you to stay in debt. We fight back.",
+    description:
+      "What if you don't actually owe what they say you owe? Find out and fight back.",
+    siteName: "Usury",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "They want you to stay in debt. We fight back.",
+    description:
+      "What if you don't actually owe what they say you owe? Find out and fight back.",
   },
 };
 
