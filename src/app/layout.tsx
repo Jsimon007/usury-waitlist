@@ -29,9 +29,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Usury — Your bank is robbing you",
+  metadataBase: new URL("https://usury.com"),
+  title: "Usury — They want you to stay in debt. We fight back.",
   description:
-    "Your credit card's APR was legal in zero countries before 1978. Usury shows you exactly what it's costing you and how to fight back.",
+    "What if you don't actually owe what they say you owe? Find out and fight back.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
